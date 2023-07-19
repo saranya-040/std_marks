@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Visualization</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        table {
+            margin: 10px auto;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Marks Input</h1>
+    <form action="/process" method="POST">
+        <table>
+            <tr>
+                <th>Student</th>
+                <th>Marks</th>
+            </tr>
+            {% for i in range(num_students) %}
+            <tr>
+                <td>
+                    <input type="text" name="student" required>
+                </td>
+                <td>
+                    <input type="number" name="mark" required>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
