@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import matplotlib.pyplot as plt
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['STATIC_FOLDER'] = 'static'
 
@@ -30,5 +30,5 @@ def process():
     plt.close()
     return render_template('visualization.html')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
